@@ -49,12 +49,14 @@ const memberImg = document.getElementById("inputImmagine");
 
 const addMember = document.getElementById("add-Member");
 
+const modalMember = document.getElementById("member-modal");
+
 // # ALGORITMO
 
 addMemberFunction();
 
 // # FUNZIONE COMPOSIZIONE GRIGLIA CARDS
-const addMemberFunction = () => {
+function addMemberFunction() {
   let cardHTML = ``;
 
   for (const member of teamMembers) {
@@ -81,11 +83,11 @@ const addMemberFunction = () => {
   }
 
   cardRow.innerHTML = cardHTML;
-};
+}
 
 // # ACQUISIZIONE MEMBRO
 
-addMember = addEventListener("submit", function (e) {
+addMember.addEventListener("submit", function (e) {
   e.preventDefault();
 
   // Costruzione oggetto membro
@@ -102,5 +104,9 @@ addMember = addEventListener("submit", function (e) {
   // Aggiunta alla griglia
   addMemberFunction();
 
-  console.log(teamMembers);
+  // Reset form
+  addMember.reset();
+
+  const modal = bootstrap.Modal.getInstance(modalMember);
+  modal.hide();
 });
