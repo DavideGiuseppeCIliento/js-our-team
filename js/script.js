@@ -130,7 +130,7 @@ function addMemberFunction() {
     console.log(member.name);
     cardHTML += `
             <!---------------COLONNA CARD -->
-            <div class="col-4">
+            <div class="col-6 col-lg-4">
               <div class="card mb-3" style="max-width: 540px">
                 <div class="row g-0">
                   <div class="col-md-4">
