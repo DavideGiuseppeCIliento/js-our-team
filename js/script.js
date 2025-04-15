@@ -39,15 +39,40 @@ const teamMembers = [
   },
 ];
 
-// # ACQUISIZIONE
-const cardContainer = document.getElementById("card-container");
+// # ACQUISIZIONE DATI DOM
+const cardRow = document.getElementById("card-row");
+const memberName = document.getElementById("inputName");
+const memberRole = document.getElementById("inputRole");
+const memberEmal = document.getElementById("inputEmail");
 
 // # ALGORITMO
 
 let cardHTML = ``;
 
 for (const member of teamMembers) {
+  console.log(member.name);
   cardHTML += `
+            <!---------------COLONNA CARD -->
+            <div class="col-4">
+              <div class="card mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="./assets/${member.img}" class="img-fluid rounded-start" alt="immagine" />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">${member.name}</h5>
+                      <p class="card-text">${member.role}</p>
+                      <p class="card-text"><small class="text-body-secondary">${member.email}</small></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
   
   `;
 }
+
+cardRow.innerHTML = cardHTML;
+
+// # ACQUISIZIONE MEMBRO
