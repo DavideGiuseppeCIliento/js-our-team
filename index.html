@@ -49,7 +49,7 @@
         <div class="container">
           <div class="row mt-4" id="card-row">
             <!---------------COLONNA CARD -->
-            <div class="col-4">
+            <!-- <div class="col-4">
               <div class="card mb-3" style="max-width: 540px">
                 <div class="row g-0">
                   <div class="col-md-4">
@@ -69,7 +69,7 @@
         </div>
         <div class="container">
           <div class="row">
-            <div class="col-12">
+            <div class="col-12"> -->
               <!-- Button trigger modal -->
               <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Launch demo modal</button>
             </div>
@@ -92,21 +92,25 @@
           </div>
           <div class="modal-body">
             <!-- FORM -->
-            <form class="row g-3">
+            <form class="row g-3" id="add-Member">
               <div class="col-12">
                 <label for="inputName" class="form-label">Nome</label>
                 <input type="text" class="form-control" id="inputName" placeholder="Inserisci il nome del nuovo membro" />
               </div>
               <div class="col-md-6">
                 <label for="inputEmail" class="form-label">Email</label>
-                <input type="email" class="form-control" id="inputEmail" placeholder="Inserisci il nome del nuovo membro" />
+                <input type="email" class="form-control" id="inputEmail" placeholder="Inserisci l'E-mail " />
               </div>
               <div class="col-md-6">
                 <label for="inputRole" class="form-label">Ruolo</label>
-                <input type="password" class="form-control" id="inputRole" placeholder="Inserisci il nome del nuovo membro" />
+                <input type="text" class="form-control" id="inputRole" placeholder="Inserisci il ruolo " />
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <label for="inputImmagine" class="form-label">Immagine</label>
+                <input type="text" class="form-control" id="inputImmagine" placeholder="Inserisci url Immagine" />
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">Aggungi Membro</button>
               </div>
             </form>
           </div>

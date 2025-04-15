@@ -41,17 +41,25 @@ const teamMembers = [
 
 // # ACQUISIZIONE DATI DOM
 const cardRow = document.getElementById("card-row");
+
 const memberName = document.getElementById("inputName");
 const memberRole = document.getElementById("inputRole");
-const memberEmal = document.getElementById("inputEmail");
+const memberEmail = document.getElementById("inputEmail");
+const memberImg = document.getElementById("inputImmagine");
+
+const addMember = document.getElementById("add-Member");
 
 // # ALGORITMO
 
-let cardHTML = ``;
+addMemberFunction();
 
-for (const member of teamMembers) {
-  console.log(member.name);
-  cardHTML += `
+// # FUNZIONE COMPOSIZIONE GRIGLIA CARDS
+const addMemberFunction = () => {
+  let cardHTML = ``;
+
+  for (const member of teamMembers) {
+    console.log(member.name);
+    cardHTML += `
             <!---------------COLONNA CARD -->
             <div class="col-4">
               <div class="card mb-3" style="max-width: 540px">
@@ -69,10 +77,30 @@ for (const member of teamMembers) {
                 </div>
               </div>
             </div>
-  
   `;
-}
+  }
 
-cardRow.innerHTML = cardHTML;
+  cardRow.innerHTML = cardHTML;
+};
 
 // # ACQUISIZIONE MEMBRO
+
+addMember = addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Costruzione oggetto membro
+  const newMember = {
+    name: memberName.value,
+    role: memberRole.value,
+    email: memberEmail.value,
+    img: memberImg.value,
+  };
+
+  // Inserimento nel team
+  teamMembers.push(newMember);
+
+  // Aggiunta alla griglia
+  addMemberFunction();
+
+  console.log(teamMembers);
+});
